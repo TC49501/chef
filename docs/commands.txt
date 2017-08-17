@@ -1,0 +1,79 @@
+C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\txc68\programs\chef\dk\opscode\chefdk\bin\start-chefdk.ps1
+C:\Users\txc68\chef-repo
+172.26.4.76
+/home/chef
+[chef@student-32 ~]
+Vi  moo.rb
+Chef client
+sudo chef-client -z moo.rb
+cowsay hello
+Vi hello.rb
+sudo chef-client -z hello.rb
+sudo chef-client -z setup.rb
+mkdir cookbooks
+Chef --help
+ chef generate cookbook cookbooks/workstation
+Cd /home/chef/cookbooks/workstation
+Git init
+Git add .
+chef generate cookbook cookbooks/apache
+chef generate recipe cookbooks/apache server
+sudo chef-client -z cookbooks/apache/recipes/server.rb
+sudo chef-client --local-mode -r "recipe[apache::server]"
+sudo chef-client -z -r "recipe[apache]"
+kitchen --help
+[chef@student-32 workstation]$ vi .kitchen.yml
+sudo kitchen list
+Sudo kitchen converge
+sudo kitchen login
+[chef@student-32 workstation]$ hostname -I
+192.168.90.36 172.17.42.1
+[chef@student-32 workstation]$ hostname
+student-32
+[chef@student-32 workstation]$ cat /proc/meminfo
+MemTotal:        3924516 kB
+cat /proc/cpuinfo
+cpu MHz         : 2599.996
+sudo kitchen test
+sudo chef-client -z -r "recipe[workstation]"
+Ohai
+chef generate --help
+
+From chef powershell
+C:\Users\txc68\chef-repo\
+Cd ~/chef-repo
+Knife --help
+Knife client list
+PS C:\Users\txc68\chef-repo> knife client list
+dpdorg-validator
+Knife client --help
+netsh winhttp set proxy proxy-server="http=172.26.4.33:3128;https=172.26.4.33:3128"
+Berks --help
+netsh winhttp set proxy proxy-server=http=172.26.4.33:3128;https=172.26.4.33:3128
+Berks install
+C:\Users\txc68\chef-repo\cookbooks\workstation
+Berks upload
+Knife cookbook list
+Knife node list
+knife bootstrap 172.26.4.76 -x chef -P chef --sudo -N node1
+Knife node list
+Knife node show node1
+knife node run_list add node1 "recipe[apache]"
+Chef generate cookbook cookbooks/myhaproxy
+set http_proxy=http://172.26.4.33:3128
+set https_proxy=http://172.26.4.33:3128
+knife bootstrap 172.26.4.74 -x chef -P chef --sudo -N node2
+knife node run_list add node2 "recipe[myhaproxy]"
+Knife ssh --help
+knife ssh "*:*" -x chef -P chef -a cloud.public_ipv4 "sudo chef-client"
+knife bootstrap 172.26.4.73 -x chef -P chef --sudo -N node3
+knife node run_list add node3 "recipe[apache]"
+knife search recipe:apache
+knife ssh "recipe:myhaproxy" -x chef -P chef -a cloud.public_ipv4 "sudo chef-client"
+Knife environment list
+ knife environment show _default
+knife search node "*:*"
+knife environment from file production.rb
+Knife environment list
+knife node environment set node1 production
+knife node environment set node3 acceptance

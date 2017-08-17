@@ -1,0 +1,69 @@
+From: Emily Traylor 
+Sent: Thursday, August 10, 2017 4:25 PM
+To: Anvesh Deepu Sriperumbudur; Snehil Maheshwari; Rajesh Elumalai; Sharidha Ambalath; Vaideeswaran Sundaram; Thiruvengadam Chinnamani; Michael Field; James Davis; Zeba Munshi; Himanshu Anand; Carlos Ramirez; Gaston Breaux
+Subject: Chef Essentials 8/16-17 Training Information
+
+Ssh ipaddress -l username
+
+http://sdlc.devcentral.equifax.com/stash/projects/EFXCHEF
+
+Chef recipes and cookbooks
+Manage nodes with chef server
+Create organizations
+Bootstrap nodes
+Assign roles to nodes
+Deploy nodes to environments
+
+Chef can automate how you build, deploy, and manage your infrastructure.
+https://docs.chef.io/resources.html
+
+Create recipe file (*.rb)
+Apply recipe file
+
+Create cookbook
+Setting up web server in new cookbook
+Running multiple cookbooks
+Testing cookbooks
+Test kitchen commands and configurations
+Kitchen create/converge/verify/destroy
+http://serverspec.org/resource_types.html
+sudo kitchen verify
+Sudo kitchen test
+
+Ohai
+Ohai is a tool that detects and captures attributes about our system. Attributes like the ones we spent our time capturing already.
+String Interpolation
+
+cookbook template is an Embedded Ruby (ERB) template
+
+Chef Server
+Setup load balancer
+https://manage.chef.io/login
+Download starter kit
+Knife used to connect from local chef repo  to remote chef server
+Berkshelf is a cookbook management tool that allows us to upload your cookbooks and all of its dependencies to the Chef Server.
+Upload cookbook to server
+Create node on server
+Add recipe to run list
+https://supermarket.chef.io
+Internal bluebird community
+Haproxy cookbook
+Bootstrap a new node
+-------------------------------------------------------------------------------
+Chef is a thin DSL (domain-specific language) built on top of Ruby. Chef is a powerful automation platform that transforms infrastructure into code. Whether you’re operating in the cloud, on-premises, or in a hybrid environment, Chef automates how infrastructure is configured, deployed, and managed across your network, no matter its size.
+
+Workstation:The workstation is the location from which users interact with Chef. On the workstation users author and test cookbooks using tools such as Test Kitchen and interact with the Chef server using the knife and chef command line tools.
+Nodes:Nodes are the machines—physical, virtual, cloud, and so on—that are under management by Chef. The chef-client is installed on each node and is what performs the automation on that machine.
+Chef Server:Use the Chef server as your foundation to create and manage flexible, dynamic infrastructure whether you manage 50 or 500,000 nodes, across multiple datacenters, public and private clouds, and in heterogeneous environments.
+Chef Supermarket is the location in which community cookbooks are shared and managed. Cookbooks that are part of the Chef Supermarket may be used by any Chef user.
+The Chef Development Kit is a package that contains everything that is needed to start using Chef:
+The chef-repo is the repository structure in which cookbooks are authored, tested, and maintained:
+Use Test Kitchen to automatically test cookbook data across any combination of platforms and test suites:
+Use ChefSpec to simulate the convergence of resources on a node:
+A cookbook is the fundamental unit of configuration and policy distribution. A cookbook defines a scenario and contains everything that is required to support that scenario:
+A recipe is the most fundamental configuration element within the organization.
+A resource is a statement of configuration policy
+A chef-client is an agent that runs locally on every node that is under management by Chef. 
+Ohai is a tool that is used to collect system configuration data, which is provided to the chef-client for use within cookbooks.
+A data bag is a global variable that is stored as JSON data and is accessible from a Chef server.
+A run-list defines all of the information necessary for Chef to configure a node into the desired state.
